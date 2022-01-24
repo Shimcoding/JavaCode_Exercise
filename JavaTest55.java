@@ -20,7 +20,7 @@ import javax.sound.midi.MidiEvent;
 public class JavaTest55 {
 	
 	public static void main(String[] args){
-		// 1.ÀÌÁß for¹® ÀÌ¿ëÇØ¼­ ±¸ÇÏ±â
+		// 1.ì´ì¤‘ forë¬¸ ì´ìš©í•´ì„œ êµ¬í•˜ê¸°
 //		final int DICE_NUM = 6;
 //		
 //		for (int i = 1; i <= DICE_NUM ; i++) {
@@ -32,7 +32,7 @@ public class JavaTest55 {
 		
 		
 		
-		// 2.ÀÌÁß for¹® ÀÌ¿ëÇØ¼­ ±¸ÇÏ±â(Áßº¹ Á¦°Å)
+		// 2.ì´ì¤‘ forë¬¸ ì´ìš©í•´ì„œ êµ¬í•˜ê¸°(ì¤‘ë³µ ì œê±°)
 //		final int DICE_NUM = 6;
 //		
 //		for (int i = 1; i <= DICE_NUM ; i++) {
@@ -48,12 +48,12 @@ public class JavaTest55 {
 		
 		
 		
-		// 3.ÁÖ»çÀ§ÀÇ ÇÕÀÌ °¡Àå ÀÛÀº µÎ ´«ÀÇ ¼ö ±¸ÇÏ±â
-//		//Ã¹ ¹øÂ° ÁÖ»çÀ§ ÃÖ¼Ú°ª ±¸ÇÏ±â
+		// 3.ì£¼ì‚¬ìœ„ì˜ í•©ì´ ê°€ì¥ ì‘ì€ ë‘ ëˆˆì˜ ìˆ˜ êµ¬í•˜ê¸°
+//		//ì²« ë²ˆì§¸ ì£¼ì‚¬ìœ„ ìµœì†Ÿê°’ êµ¬í•˜ê¸°
 //		IntStream intStream = IntStream.rangeClosed(1, 6);
 //		OptionalInt DiceMinInt1 = intStream.min();
 //		
-//		//µÎ ¹øÂ° ÁÖ»çÀ§ ÃÖ¼Ú°ª ±¸ÇÏ±â
+//		//ë‘ ë²ˆì§¸ ì£¼ì‚¬ìœ„ ìµœì†Ÿê°’ êµ¬í•˜ê¸°
 //		intStream = IntStream.rangeClosed(1, 6);
 //		OptionalInt DiceMinInt2 = intStream.min();
 //		
@@ -61,10 +61,10 @@ public class JavaTest55 {
 		
 		
 		
-		// 4. 1~45»çÀÌ¿¡ ¼ö¸¦ ÀÓÀÇ·Î 6°³¸¦ ÀÔ·Â ¹Ş°í ÃÖ¼Ú°ª ±¸ÇÏ±â(Áßº¹µÈ ¼ö)
+		// 4. 1~45ì‚¬ì´ì— ìˆ˜ë¥¼ ì„ì˜ë¡œ 6ê°œë¥¼ ì…ë ¥ ë°›ê³  ìµœì†Ÿê°’ êµ¬í•˜ê¸°(ì¤‘ë³µëœ ìˆ˜ )
 //		IntStream intStream = new Random().ints(1,46)
 //								.distinct().limit(6);
 //		OptionalInt optMin = intStream.min();
-//		System.out.println("ÃÖ¼Ú°ª: "+ optMin.getAsInt());
+//		System.out.println("ìµœì†Ÿê°’: "+ optMin.getAsInt());
 	}
 }
