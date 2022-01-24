@@ -61,7 +61,7 @@ public class JavaTest55 {
 		
 		
 		
-		// 4. 1~45사이에 수를 임의로 6개를 입력 받고 최솟값 구하기(중복된 수 x)
+		// 4. 1~45사이에 수를 임의로 6개를 입력 받고 최솟값 구하기(중복된 수 x )
 //		IntStream intStream = new Random().ints(1,46)
 //								.distinct().limit(6);
 //		OptionalInt optMin = intStream.min();
