@@ -50,7 +50,7 @@ public class JavaTest66 {
 //				System.out.println("잘못된 금액을 적었습니다.");
 //				continue;
 //			}
-//			//
+//			//유
 //			if(input.length()<2) {
 //				System.out.println("입력할 금액은 최소 10원입니다.");
 //			} else if(price%10!=0) {
