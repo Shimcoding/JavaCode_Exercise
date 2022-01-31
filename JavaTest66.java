@@ -22,80 +22,73 @@ import javax.sound.midi.MidiEvent;
 
 public class JavaTest66 {
 
+	static int[] coinUnit = {500, 100, 50, 10 }; // 동전의 단위
+	static int[] coin = {5, 5, 5, 5}; // 동전의 단위
+	
 	public static void main(String[] args) {
-		// 1.나눗셈 연산자와 나머지 연산자 사용해서 구하기
-//		int[] coinUnit = {500, 100, 50, 10};
-//		int money = 2680;
-//		
-//		System.out.println("money="+money);
-//		for (int i = 0; i < coinUnit.length; i++) {
-//			System.out.printf("%d원: %d%n",coinUnit[i], money/coinUnit[i]);
-//			money %= coinUnit[i];
-//		}
+		// 1. 거슬러 줄 금액을 사용자로부터 입력 받아 계산한다(1원 짜리는 못 넣게 한다.)
+		// 단, 보유한 동전의 개수로 거스름 돈을 지불할 수 없으면
+		// '거스름 돈이 부족합니다.' 출력하게 한다.
+		// 거스름 돈을 지불할 수 있으면 지불한 만큼 가진 돈에서 빼고
+		// 남은 동전의 개수를 화면에 출력(해당 문제는 기존의 풀이 방법과 다르게 풀었습니다.)
 		
-		// 2. 1에서 동전을 거슬러 받았고
-		// 그 돈으로 사용자가 입력한 가격에 해당하는 물건을
-		// 구입한 나머지 돈을 각 동전 단위로 나타내시오
-		// 단. 입력한 돈이 현재의 돈보다 많은 경우 다시 입력하게 한다.
-//		int[] coinUnit = {500, 100, 50, 10};
-//		int money = 2680;
+//		Scanner sc = new Scanner(System.in);
 //		
-//		// 뒤에 계산을 위해서 money1 변수에 money 값 넣기
-//		int money1 = money;
-//		
-//		System.out.println("money="+money);
+//		int total = 0;
 //		for (int i = 0; i < coinUnit.length; i++) {
-//			System.out.printf("%d원: %d%n",coinUnit[i], money/coinUnit[i]);
-//			money %= coinUnit[i];
+//			total += coinUnit[i] * coin[i];
 //		}
 //		
-//		Scanner sc = new Scanner(System.in);
 //		while(true) {
+//			//거슬러 줄 금액을 입력
+//			System.out.print("거슬러 줄 금액을 입력(단, 보유한 금액보다 적게 입력하세요.)>>");
+//			String input = sc.nextLine().trim();
+//			int price = 0;
 //			try {
-//				System.out.print("물건의 가격>>");
-//				String input = sc.nextLine().trim();
-//				int price= Integer.valueOf(input);
-//				
-//				if(0<price && price<money1) {
-//					money1 -= price;
-//					System.out.println("money="+money1);
-//					for (int i = 0; i < coinUnit.length; i++) {
-//						System.out.printf("%d원: %d%n",coinUnit[i], money1/coinUnit[i]);
-//						money1 %= coinUnit[i];
-//					}
-//					break;
-//				} else {
-//					// price가 0보다 작거나 price가 money1보다 클 때 다시 입력
-//					System.out.println("입력하신 가격이 높거나 잘못된 가격을 입력했습니다.");
-//				}
+//				price = Integer.valueOf(input);
 //			} catch (Exception e) {
-//				//문자로 입력했을 때 예외처리
-//				System.out.println("잘못된 가격을 입력했습니다.");
+//				System.out.println("잘못된 금액을 적었습니다.");
 //				continue;
 //			}
-//		}
-		
-		
-		// 3.주어진 금액을 가능한 한 많은 수의 동전으로 거슬러 주기
-		// 단, 10원짜리와 50원짜리는 20개까지 사용 가능. 나머진 제한 없음.
-		// 그리고 거슬르지 못 한 돈이 있으면 출력
-//		int[] coinUnit = {500, 100, 50, 10};
-//		int money = 2680;
-//		final int MAX_COIN = 20;
-//		
-//		System.out.println("money="+money);
-//		for (int i = coinUnit.length-1; i >= 0; i--) {
-//			if(i>=coinUnit.length-2 && money/coinUnit[i]>MAX_COIN) {
-//				System.out.printf("%d원: %d%n",coinUnit[i], MAX_COIN);
-//				money -= coinUnit[i]*MAX_COIN;
-//			}else {
-//				System.out.printf("%d원: %d%n",coinUnit[i], money/coinUnit[i]);
-//				money %= coinUnit[i];
+//			
+//			if(input.length()<2) {
+//				System.out.println("입력할 금액은 최소 10원입니다.");
+//			} else if(price%10!=0) {
+//				System.out.println("1원 짜리는 입력할 수 없습니다.");
+//			} else if(price<0) {
+//				System.out.println("금액은 음수가 될 수 없습니다.");
+//			} else if(price>=total) {
+//				System.out.println("보유한 금액보다 같거나 많은 금액을 입력해서 거스름 돈이 부족합니다.");
+//			} else {
+//				//입력한 금액과 그 금액에 해당하는 거스름 돈 출력
+//				printCurrentMoney(price);
+//				//거스름 돈을 출력하고 남은 동전의 개수 출력
+//				printAfterMoney();
+//				break;
 //			}
 //		}
-//		
-//		if(money!=0) {
-//			System.out.println("거스르지 못 한 돈="+money);
-//		}
 	}
+
+//	private static void printAfterMoney() {
+//		System.out.println("=남은 동전의 개수=");
+//		for (int i = 0; i < coin.length; i++) {
+//			System.out.printf("%d원: %d%n", coinUnit[i],coin[i]);
+//		}
+//	}
+//
+//	private static void printCurrentMoney(int price) {
+//		System.out.println("money="+price);
+//		for (int i = 0; i < coin.length; i++) {
+//			if(price/coinUnit[i] >= coin[i]) {
+//				System.out.printf("%d원: %d%n",coinUnit[i],coin[i]);
+//				price -= coinUnit[i]*coin[i];
+//				coin[i] = 0;
+//				
+//			}else {
+//				System.out.printf("%d원: %d%n",coinUnit[i],price/coinUnit[i]);
+//				coin[i] -= price/coinUnit[i];
+//				price -= coinUnit[i]*(price/coinUnit[i]);
+//			}
+//		}
+//	}
 }
