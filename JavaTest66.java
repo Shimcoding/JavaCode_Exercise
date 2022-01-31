@@ -22,15 +22,15 @@ import javax.sound.midi.MidiEvent;
 
 public class JavaTest66 {
 
-	static int[] coinUnit = {500, 100, 50, 10 }; // µ¿ÀüÀÇ ´ÜÀ§
-	static int[] coin = {5, 5, 5, 5}; // µ¿ÀüÀÇ ´ÜÀ§
+	static int[] coinUnit = {500, 100, 50, 10 }; // ë™ì „ì˜ ë‹¨ìœ„
+	static int[] coin = {5, 5, 5, 5}; // ë™ì „ì˜ ë‹¨ìœ„
 	
 	public static void main(String[] args) {
-		// 1. °Å½½·¯ ÁÙ ±İ¾×À» »ç¿ëÀÚ·ÎºÎÅÍ ÀÔ·Â ¹Ş¾Æ °è»êÇÑ´Ù(1¿ø Â¥¸®´Â ¸ø ³Ö°Ô ÇÑ´Ù.)
-		// ´Ü, º¸À¯ÇÑ µ¿ÀüÀÇ °³¼ö·Î °Å½º¸§ µ·À» ÁöºÒÇÒ ¼ö ¾øÀ¸¸é
-		// '°Å½º¸§ µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.' Ãâ·ÂÇÏ°Ô ÇÑ´Ù.
-		// °Å½º¸§ µ·À» ÁöºÒÇÒ ¼ö ÀÖÀ¸¸é ÁöºÒÇÑ ¸¸Å­ °¡Áø µ·¿¡¼­ »©°í
-		// ³²Àº µ¿ÀüÀÇ °³¼ö¸¦ È­¸é¿¡ Ãâ·Â(ÇØ´ç ¹®Á¦´Â ±âÁ¸ÀÇ Ç®ÀÌ ¹æ¹ı°ú ´Ù¸£°Ô Ç®¾ú½À´Ï´Ù.)
+		// 1. ê±°ìŠ¬ëŸ¬ ì¤„ ê¸ˆì•¡ì„ ì‚¬ìš©ìë¡œë¶€í„° ì…ë ¥ ë°›ì•„ ê³„ì‚°í•œë‹¤(1ì› ì§œë¦¬ëŠ” ëª» ë„£ê²Œ í•œë‹¤.)
+		// ë‹¨, ë³´ìœ í•œ ë™ì „ì˜ ê°œìˆ˜ë¡œ ê±°ìŠ¤ë¦„ ëˆì„ ì§€ë¶ˆí•  ìˆ˜ ì—†ìœ¼ë©´
+		// 'ê±°ìŠ¤ë¦„ ëˆì´ ë¶€ì¡±í•©ë‹ˆë‹¤.' ì¶œë ¥í•˜ê²Œ í•œë‹¤.
+		// ê±°ìŠ¤ë¦„ ëˆì„ ì§€ë¶ˆí•  ìˆ˜ ìˆìœ¼ë©´ ì§€ë¶ˆí•œ ë§Œí¼ ê°€ì§„ ëˆì—ì„œ ë¹¼ê³ 
+		// ë‚¨ì€ ë™ì „ì˜ ê°œìˆ˜ë¥¼ í™”ë©´ì— ì¶œë ¥(í•´ë‹¹ ë¬¸ì œëŠ” ê¸°ì¡´ì˜ í’€ì´ ë°©ë²•ê³¼ ë‹¤ë¥´ê²Œ í’€ì—ˆìŠµë‹ˆë‹¤.)
 		
 //		Scanner sc = new Scanner(System.in);
 //		
@@ -40,29 +40,29 @@ public class JavaTest66 {
 //		}
 //		
 //		while(true) {
-//			//°Å½½·¯ ÁÙ ±İ¾×À» ÀÔ·Â
-//			System.out.print("°Å½½·¯ ÁÙ ±İ¾×À» ÀÔ·Â(´Ü, º¸À¯ÇÑ ±İ¾×º¸´Ù Àû°Ô ÀÔ·ÂÇÏ¼¼¿ä.)>>");
+//			//ê±°ìŠ¬ëŸ¬ ì¤„ ê¸ˆì•¡ì„ ì…ë ¥
+//			System.out.print("ê±°ìŠ¬ëŸ¬ ì¤„ ê¸ˆì•¡ì„ ì…ë ¥(ë‹¨, ë³´ìœ í•œ ê¸ˆì•¡ë³´ë‹¤ ì ê²Œ ì…ë ¥í•˜ì„¸ìš”.)>>");
 //			String input = sc.nextLine().trim();
 //			int price = 0;
 //			try {
 //				price = Integer.valueOf(input);
 //			} catch (Exception e) {
-//				System.out.println("Àß¸øµÈ ±İ¾×À» Àû¾ú½À´Ï´Ù.");
+//				System.out.println("ì˜ëª»ëœ ê¸ˆì•¡ì„ ì ì—ˆìŠµë‹ˆë‹¤.");
 //				continue;
 //			}
-//			
+//			//
 //			if(input.length()<2) {
-//				System.out.println("ÀÔ·ÂÇÒ ±İ¾×Àº ÃÖ¼Ò 10¿øÀÔ´Ï´Ù.");
+//				System.out.println("ì…ë ¥í•  ê¸ˆì•¡ì€ ìµœì†Œ 10ì›ì…ë‹ˆë‹¤.");
 //			} else if(price%10!=0) {
-//				System.out.println("1¿ø Â¥¸®´Â ÀÔ·ÂÇÒ ¼ö ¾ø½À´Ï´Ù.");
+//				System.out.println("1ì› ì§œë¦¬ëŠ” ì…ë ¥í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 //			} else if(price<0) {
-//				System.out.println("±İ¾×Àº À½¼ö°¡ µÉ ¼ö ¾ø½À´Ï´Ù.");
+//				System.out.println("ê¸ˆì•¡ì€ ìŒìˆ˜ê°€ ë  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 //			} else if(price>=total) {
-//				System.out.println("º¸À¯ÇÑ ±İ¾×º¸´Ù °°°Å³ª ¸¹Àº ±İ¾×À» ÀÔ·ÂÇØ¼­ °Å½º¸§ µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+//				System.out.println("ë³´ìœ í•œ ê¸ˆì•¡ë³´ë‹¤ ê°™ê±°ë‚˜ ë§ì€ ê¸ˆì•¡ì„ ì…ë ¥í•´ì„œ ê±°ìŠ¤ë¦„ ëˆì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
 //			} else {
-//				//ÀÔ·ÂÇÑ ±İ¾×°ú ±× ±İ¾×¿¡ ÇØ´çÇÏ´Â °Å½º¸§ µ· Ãâ·Â
+//				//ì…ë ¥í•œ ê¸ˆì•¡ê³¼ ê·¸ ê¸ˆì•¡ì— í•´ë‹¹í•˜ëŠ” ê±°ìŠ¤ë¦„ ëˆ ì¶œë ¥
 //				printCurrentMoney(price);
-//				//°Å½º¸§ µ·À» Ãâ·ÂÇÏ°í ³²Àº µ¿ÀüÀÇ °³¼ö Ãâ·Â
+//				//ê±°ìŠ¤ë¦„ ëˆì„ ì¶œë ¥í•˜ê³  ë‚¨ì€ ë™ì „ì˜ ê°œìˆ˜ ì¶œë ¥
 //				printAfterMoney();
 //				break;
 //			}
@@ -70,9 +70,9 @@ public class JavaTest66 {
 	}
 
 //	private static void printAfterMoney() {
-//		System.out.println("=³²Àº µ¿ÀüÀÇ °³¼ö=");
+//		System.out.println("=ë‚¨ì€ ë™ì „ì˜ ê°œìˆ˜=");
 //		for (int i = 0; i < coin.length; i++) {
-//			System.out.printf("%d¿ø: %d%n", coinUnit[i],coin[i]);
+//			System.out.printf("%dì›: %d%n", coinUnit[i],coin[i]);
 //		}
 //	}
 //
@@ -80,12 +80,12 @@ public class JavaTest66 {
 //		System.out.println("money="+price);
 //		for (int i = 0; i < coin.length; i++) {
 //			if(price/coinUnit[i] >= coin[i]) {
-//				System.out.printf("%d¿ø: %d%n",coinUnit[i],coin[i]);
+//				System.out.printf("%dì›: %d%n",coinUnit[i],coin[i]);
 //				price -= coinUnit[i]*coin[i];
 //				coin[i] = 0;
 //				
 //			}else {
-//				System.out.printf("%d¿ø: %d%n",coinUnit[i],price/coinUnit[i]);
+//				System.out.printf("%dì›: %d%n",coinUnit[i],price/coinUnit[i]);
 //				coin[i] -= price/coinUnit[i];
 //				price -= coinUnit[i]*(price/coinUnit[i]);
 //			}
