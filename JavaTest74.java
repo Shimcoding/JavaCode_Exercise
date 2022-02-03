@@ -26,11 +26,11 @@ import javax.sound.midi.MidiEvent;
 
 public class JavaTest74 {
 	public static void main(String[] args) {
-		Student4 s = new Student4("È«±æµ¿",1,1,100,60,76);
+		Student4 s = new Student4("í™ê¸¸ë™",1,1,100,60,76);
 		
-//		System.out.println("ÀÌ¸§:"+s.getName()); 
-//		System.out.println("ÃÑÁ¡:"+s.getTotal()); 
-//		System.out.println("Æò±Õ:"+s.getAverage()); 
+		System.out.println("ì´ë¦„:"+s.getName()); 
+		System.out.println("ì´ì :"+s.getTotal()); 
+		System.out.println("í‰ê· :"+s.getAverage()); 
 		
 		System.out.println(s.info());
 		System.out.println(s);
@@ -91,28 +91,28 @@ class Student4{
 		this.math = math;
 	}
 	
-	//(±¹¾î,¼öÇĞ,¿µ¾î)ÃÑÇÕ ±¸ÇÏ±â
+	//(êµ­ì–´,ìˆ˜í•™,ì˜ì–´)ì´í•© êµ¬í•˜ê¸°
 	int getTotal() {
-		// À¯È¿¼º °Ë»ç
+		// ìœ íš¨ì„± ê²€ì‚¬
 		if((0<=math && math<=100)||(0<=kor && kor<=100)||(0<=eng && eng<=100))
 			return math+kor+eng;
 		
-		// Àß¸øµÈ °ªÀÌ µé¾î ¿ÔÀ¸¸é 0À» ¹İÈ¯
+		// ì˜ëª»ëœ ê°’ì´ ë“¤ì–´ ì™”ìœ¼ë©´ 0ì„ ë°˜í™˜
 		return 0;
 	}
 	
-	//(±¹¾î,¼öÇĞ,¿µ¾î)Æò±Õ ±¸ÇÏ±â
+	//(êµ­ì–´,ìˆ˜í•™,ì˜ì–´)í‰ê·  êµ¬í•˜ê¸°
 	double getAverage() {
 		return Math.round((getTotal() / 3.0)*10)/10.0;
 	}
 	
-	// info()·Î °¢ ¿ä¼ÒÀÇ °ªµé Ãâ·Â
+	// info()ë¡œ ê° ìš”ì†Œì˜ ê°’ë“¤ ì¶œë ¥
 	String info() {
 		return name+","+ban+","+no+","+kor+","+eng+","+math+","+getTotal()+","+getAverage();
 	}
 
 	@Override
-	// toString()À¸·Î °¢ ¿ä¼ÒÀÇ °ªµé Ãâ·Â
+	// toString()ìœ¼ë¡œ ê° ìš”ì†Œì˜ ê°’ë“¤ ì¶œë ¥
 	public String toString() {
 		return "name=" + name + ", ban=" + ban + ", no=" + no + ", kor=" + kor + ", eng=" + eng + ", math="
 				+ math + ", getTotal()=" + getTotal() + ", getAverage()=" + getAverage() + "]";
