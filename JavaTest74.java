@@ -28,9 +28,12 @@ public class JavaTest74 {
 	public static void main(String[] args) {
 		Student4 s = new Student4("홍길동",1,1,100,60,76);
 		
-		System.out.println("이름:"+s.getName()); 
-		System.out.println("총점:"+s.getTotal()); 
-		System.out.println("평균:"+s.getAverage()); 
+//		System.out.println("이름:"+s.getName()); 
+//		System.out.println("총점:"+s.getTotal()); 
+//		System.out.println("평균:"+s.getAverage()); 
+		
+		System.out.println(s.info());
+		System.out.println(s);
 	}
 }
 
@@ -102,4 +105,18 @@ class Student4{
 	double getAverage() {
 		return Math.round((getTotal() / 3.0)*10)/10.0;
 	}
+	
+	// info()로 각 요소의 값들 출력
+	String info() {
+		return name+","+ban+","+no+","+kor+","+eng+","+math+","+getTotal()+","+getAverage();
+	}
+
+	@Override
+	// toString()으로 각 요소의 값들 출력
+	public String toString() {
+		return "name=" + name + ", ban=" + ban + ", no=" + no + ", kor=" + kor + ", eng=" + eng + ", math="
+				+ math + ", getTotal()=" + getTotal() + ", getAverage()=" + getAverage() + "]";
+	}
+	
+	
 }
