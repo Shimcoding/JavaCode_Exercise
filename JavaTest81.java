@@ -31,24 +31,39 @@ import ch4.For3;
 
 public class JavaTest81 {
 	
+	static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 		SutdaDeck deck = new SutdaDeck();
+		System.out.println("=섞기 전 카드 값=");
 		for(SutdaCard3 s : deck.cards) {
 			System.out.print(s+",");
 		}
+		System.out.println();
+		System.out.println("주어진 값으로 선택한 카드 값:"+deck.pick(0));
+		System.out.println();
+		System.out.println("=섞은 카드 값=");
+		//shuffle()로 섞기
+		deck.shuffle();
+		for(SutdaCard3 s : deck.cards) {
+			System.out.print(s+",");
+		}
+		System.out.println();
+		System.out.println("주어진 값으로 선택한 카드 값:"+deck.pick(0));
+		System.out.println("임의로 선택한 카드 값:"+deck.pick());
 	}
 }
 
 class SutdaDeck{
 	// 1. CARD_NUM을 주어진 상태에서 deck에 1~10까지 값을 넣고
 	// 처음 1,3,8에는 K을 붙여서 출력
-//	final int CARD_NUM = 20;
+	final int CARD_NUM = 20;
 	
 	
 	// 2. CARD_NUM을 사용자로부터 입력 받아 deck 정렬하기
-	Scanner sc = new Scanner(System.in);
-	// 유효성 검사를 통해 CARD_NUM에 넣기(잘못된 값 입력 시 1넣기)
-	final int CARD_NUM = Integer.valueOf(inputNum(sc.nextLine())); 
+//	Scanner sc = new Scanner(System.in);
+//	// 유효성 검사를 통해 CARD_NUM에 넣기(잘못된 값 입력 시 1넣기)
+//	final int CARD_NUM = Integer.valueOf(inputNum(sc.nextLine())); 
 	
 	SutdaCard3[] cards = new SutdaCard3[CARD_NUM];
 	
@@ -76,6 +91,23 @@ class SutdaDeck{
 			return "1";
 		return input;
 	}
+	
+	void shuffle(){
+		for (int i = 0; i < CARD_NUM*2; i++) {
+			int num = (int)(Math.random()*CARD_NUM);
+			SutdaCard3 tmp = cards[num];
+			cards[num] = cards[0];
+			cards[0] = tmp;
+		}
+	}
+	
+	SutdaCard3 pick(int select) {
+		return cards[select];
+	}
+	
+	SutdaCard3 pick() {
+		return cards[(int)(Math.random()*CARD_NUM)];
+	}
 }
 
 class SutdaCard3{
@@ -95,5 +127,6 @@ class SutdaCard3{
 	public String toString() {
 		return num + (isKwang ? "K" : "");
 	}
+	
 	
 }
