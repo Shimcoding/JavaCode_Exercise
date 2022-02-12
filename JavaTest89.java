@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class JavaTest89 {
 
 	public static void main(String[] args) {
-		// 각각의 value 값 얻어 내기
+		// 각각의 value 값 얻어 내기 
 		Outer1 outer = new Outer1();
 		Outer1.Inner inner = outer.new Inner();
 		inner.method1();
