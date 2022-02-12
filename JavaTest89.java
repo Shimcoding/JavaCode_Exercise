@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class JavaTest89 {
 
 	public static void main(String[] args) {
-		// °¢°¢ÀÇ value °ª ¾ò¾î ³»±â
+		// ê°ê°ì˜ value ê°’ ì–»ì–´ ë‚´ê¸°
 		Outer1 outer = new Outer1();
 		Outer1.Inner inner = outer.new Inner();
 		inner.method1();
