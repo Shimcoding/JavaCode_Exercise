@@ -13,7 +13,7 @@ public class JavaTest94 {
 		String path = "";
 		String fileName = "";
 		
-		// 1.subString()À¸·Î ³ª´©±â
+		// 1.subString()ìœ¼ë¡œ ë‚˜ëˆ„ê¸°
 //		path = fullPath.substring(0,fullPath.indexOf("\\P"));
 //		fileName = fullPath.substring(fullPath.indexOf("\\P")+1);
 //		
@@ -23,7 +23,7 @@ public class JavaTest94 {
 		
 		
 		
-		// 2.split()À¸·Î '\'³ª´©±â
+		// 2.split()ìœ¼ë¡œ '\'ë‚˜ëˆ„ê¸°
 		String[] str = fullPath.split("\\\\");
 		System.out.println(Arrays.toString(str));
 		
