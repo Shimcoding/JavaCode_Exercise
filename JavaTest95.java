@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
+ 
 public class JavaTest95 {
 
 	public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class JavaTest95 {
 	}
 
 	private static void printGraph(int[] arr, char c) {
-		// 1.Arrays.fill()·Î ¼ıÀÚ¸¸Å­ º° ³Ö±â
+		// 1.Arrays.fill()ë¡œ ìˆ«ìë§Œí¼ ë³„ ë„£ê¸°
 		for (int i = 0; i < arr.length; i++) {
 			char[] chArr = new char[arr[i]];
 			Arrays.fill(chArr, c);
@@ -25,7 +25,7 @@ public class JavaTest95 {
 		
 		
 		
-		// 2.for¹®À¸·Î¸¸ ±¸ÇÏ±â
+		// 2.forë¬¸ìœ¼ë¡œë§Œ êµ¬í•˜ê¸°
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i]; j++) {
 				System.out.print(c);
