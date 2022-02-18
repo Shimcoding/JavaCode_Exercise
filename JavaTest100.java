@@ -23,16 +23,26 @@ public class JavaTest100 {
 	private static String delChar(String src, String delCh) {
 		// 1.2중 for문으로 구하기
 		
-		StringBuilder sb = new StringBuilder(src.length());
-		for (int i = 0; i < src.length(); i++) {
-			for (int j = 0; j < delCh.length(); j++) {
-				if(src.charAt(i)==delCh.charAt(j))
-					break;
-				if(j==delCh.length()-1)
-					sb.append(src.charAt(i));
-			}
-		}
+//		StringBuilder sb = new StringBuilder(src.length());
+//		for (int i = 0; i < src.length(); i++) {
+//			for (int j = 0; j < delCh.length(); j++) {
+//				if(src.charAt(i)==delCh.charAt(j))
+//					break;
+//				if(j==delCh.length()-1)
+//					sb.append(src.charAt(i));
+//			}
+//		}
 		
+		
+		// 2.indexOf()으로 구하기
+		StringBuilder sb = new StringBuilder(src.length());
+		int pos = 0;
+		for (int i = 0; i < src.length(); i++) {
+			char ch = src.charAt(i);
+			
+			if(delCh.indexOf(ch)==-1)
+				sb.append(ch);
+		}
 		return sb.toString();
 	}
 }
